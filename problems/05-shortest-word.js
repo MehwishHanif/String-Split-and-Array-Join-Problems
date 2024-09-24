@@ -5,10 +5,24 @@ return the word that appears later in the sentence.
 */
 
 // Your code here 
+function shortestWord(sentence){
+    let wordArr=sentence.split(' ');
+    let shortest=wordArr[0].length;
+    let shortestWord= wordArr[0];
 
-// console.log(shortestWord('what a wonderful life'));     // 'a'
-// console.log(shortestWord('the quick brown fox jumps')); // 'fox'
-// console.log(shortestWord('do what you enjoy'));         // 'do'
+    for(let i =0; i <wordArr.length ; i++){
+        if(wordArr[i].length <= shortest ){
+            shortest=wordArr[i].length;
+            shortestWord=wordArr[i];
+        }            
+    }
+
+    return shortestWord;
+}
+
+console.log(shortestWord('what a wonderful life'));     // 'a'
+console.log(shortestWord('the quick brown fox jumps')); // 'fox'
+console.log(shortestWord('do what you enjoy'));         // 'do'
 
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/
 module.exports = shortestWord;

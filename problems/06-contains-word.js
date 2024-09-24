@@ -6,11 +6,20 @@ includes() methods.
 */
 
 // Your code here 
+function containsWord( sentence, targetWord){
+    let isFound=false;
+    let wordArr=sentence.toLowerCase().split(' ');
 
-// console.log(containsWord('sounds like a plan', 'like')); // true
-// console.log(containsWord('They are great', 'they')); // true
-// console.log(containsWord('caterpillars are great animals', 'cat')); // false
-// console.log(containsWord('Cast the net', 'internet')); // false
+    if(wordArr.indexOf(targetWord) !== -1)
+        isFound=true; 
+
+    return isFound;
+}
+
+console.log(containsWord('sounds like a plan', 'like')); // true
+console.log(containsWord('They are great', 'they')); // true
+console.log(containsWord('caterpillars are great animals', 'cat')); // false
+console.log(containsWord('Cast the net', 'internet')); // false
 
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/
 module.exports = containsWord;
